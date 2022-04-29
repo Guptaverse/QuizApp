@@ -1,17 +1,34 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React,{Component} from "react";
+import ReactDOM from "react-dom";
+import "./assets/style.css";
+import quizs from "./quizService"
+import QuestionBox from "./components/QuestionBox";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+class QuizBee extends Component{
+    state ={
+        questionBank: []
+    };
+    getQuestions = () =>{
+        quizs().then(question =>{
+            this.setState({
+                questionBank:question
+            })
+        })
+    }
+    componentDidMount(){
+        this.getQuestions();
+    }
+    render(){
+        return(
+            <div className="container">
+                <div className="title">
+                    QuizBee
+                </div>
+                {this.state.questionBank.length>0 && this.state.questionBank.map(({question,answers,
+                correct,questionId}) => (<QuestionBox question ={question} options={answers} key={questionId}/>)
+                )}
+            </div>
+        );
+    }
+}
+ReactDOM.render(<QuizBee />,document.getElementById("root"));
