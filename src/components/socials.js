@@ -1,11 +1,13 @@
 import React from "react";
-const img =(url)=>{
-    window.open(url);
-}
-export const socials =({url,src})=>{
+
+const Socials=({url,src})=>{
+    const imgg =(url)=>{
+        window.open(url);
+    }
     return(
-        <div className="socials" onClick={this.img(url)}>
-            <img src={src}></img>
+        <div className="socials" onClick={imgg(url)}>
+            <img src={toString(src)}></img>
         </div>
     )
 }
+export default Socials

@@ -1,10 +1,10 @@
 import React,{Component} from "react";
 import ReactDOM from "react-dom";
-import "./assets/style.css";
+import "./assets/style1.css";
 import quizs from "./quizService"
 import QuestionBox from "./components/QuestionBox";
-import Result from "./components/result.js";
-import { footer } from "./components/footer";
+import Result from "./components/Result.js";
+import { Footer } from "./components/Footer";
 
 class QuizBee extends Component{
     state ={
@@ -43,20 +43,25 @@ class QuizBee extends Component{
     }
     render(){
         return(
-            <div className="container">
-                <div className="title">
-                    QuizBee
+            <>
+            <div className="Box-1">
+
+                <div className="container">
+                    <div className="title">
+                        QuizerBend
+                    </div>
+                    {this.state.questionBank.length>0&&this.state.response<5 && this.state.questionBank.map(({question,answers,
+                    correct,questionId}) => (<QuestionBox question ={question} options={answers} key={questionId}
+                    selected = {(answer)=>this.computeAnswer(answer,correct)}
+                    />)
+                    )}
+                    {this.state.response === 5?(<Result score={this.state.score} playAgain = {this.playAgain}/>):null}
+                    {/* {this.state.response === 5?(<h2>hello</h2>):null} */}
+                    {/* {this.state.response === 5?<Result/>:null} */}
                 </div>
-                {this.state.questionBank.length>0&&this.state.response<5 && this.state.questionBank.map(({question,answers,
-                correct,questionId}) => (<QuestionBox question ={question} options={answers} key={questionId}
-                selected = {(answer)=>this.computeAnswer(answer,correct)}
-                />)
-                )}
-                {this.state.response === 5?(<Result score={this.state.score} playAgain = {this.playAgain}/>):null}
-                {/* {this.state.response === 5?(<h2>hello</h2>):null} */}
-                {/* {this.state.response === 5?<Result/>:null} */}
-                <footer/>
             </div>
+            <Footer/>
+            </>
         );
     }
 }

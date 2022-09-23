@@ -1,0 +1,138 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway");
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@300&family=Mochiy+Pop+P+One&family=Permanent+Marker&family=Varela+Round&display=swap');
+
+* {
+  font-family: "Raleway", sans-serif;
+  /* background-color: aliceblue; */
+}
+body{
+    /* background-image: url(C:\Users\Shiva\Documents\dsa\reactProjects\quizz\public\background.jpg); */
+    margin: 0%;
+    padding: 0%;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* background-color: rgb(235, 35, 35); */
+}
+.Box-1{
+    /* background-color: rgb(216, 37, 37) ; */
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    
+}
+.container{
+    /* background-color: rgb(181, 148, 19); */
+    width: 50%;
+    /* height: 100%; */
+    padding: 25px;
+    box-shadow: 3px 14px 39px 7px #11B;
+}
+.title{
+  background-color: rgb(95, 77, 236);
+  color: rgb(255, 255, 255);
+  text-align: center;
+  font-family: 'Permanent Marker', cursive;
+  padding: 2px;
+  font-size: 1.8em;
+  border-radius: 5px;
+
+}
+.question {
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    color: white;
+    background-color: rgb(0, 0, 0);
+  }
+.questionBox {
+    text-align: center;
+    width:100%;
+    padding-bottom: 2px;
+    border: 1px solid rgb(93, 29, 182);
+    box-sizing: border-box;
+    background-color: rgb(12, 11, 11);
+}
+.answerBtn {
+    /* position: relative; */
+    margin-right: 2px;
+    /* background-color: rgb(154, 77, 236); */
+    background-color: rgb(95, 77, 236);
+    display: inline-block;
+    /* margin: 10px; */
+    outline: none;
+    border: none;
+    font-size: 0.9em;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.score-board {
+    position: relative;
+    width: 50%;
+    height: 50vh;
+}
+.score {
+    position: absolute;
+    /* width: 1000px; */
+    color: white;
+    font-size: 2em;
+    top: 50px;
+    text-align: center;
+}
+  
+.playBtn {
+    position: absolute;
+    font-size: 1.4em;
+    padding: 10px;
+    top: 150px;
+    background-color: rgb(46, 182, 46);
+    color: rgb(255, 255, 255);
+    width: 150px;
+    left: 0px;
+    right: 0px;
+    margin: auto;
+    outline: none;
+    cursor: pointer;
+  }
+.footer{
+    /* background-color: blue; */
+    text-align: center;
+    width: 100%;
+    height: 20vh;
+}
+.f_name{
+    font-weight: 800;
+    color: rgb(199, 88, 209);
+}
+
+@media screen and (max-width: 730px){
+    .container{
+        margin-top: 20%;
+    }
+    .footer{
+        margin-top: 20%;
+    }
+}
+/* bug to be fixed */
+/* @media screen and (max-width: 561px){
+    .Box-1{
+
+        width: 100%;
+        height: 180%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        
+    }
+} */
